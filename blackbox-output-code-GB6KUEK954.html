@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaar Bin - Game Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .logo {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px 30px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .btn-register {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-register:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+        }
+
+        .btn-login {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.4);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(78, 205, 196, 0.6);
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .feature i {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2.5em;
+            }
+            .container {
+                padding: 30px 20px;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo pulse">🕹️ Yaar Bin</div>
+        <p class="tagline">Sabse Mazedaar Game Platform! Dost banayein, khelein aur jeetein!</p>
+        
+        <a href="https://yaarwin.org/#/register?invitationCode=24571258066" class="btn btn-register" target="_blank">
+            🚀 नया अकाउंट बनाएं (Register)
+        </a>
+        
+        <a href="https://yaarwin.org/#/register?invitationCode=24571258066" class="btn btn-login" target="_blank">
+            🎮 लॉगिन करें (Login)
+        </a>
+
+        <div class="features">
+            <div class="feature">
+                <div>⚡</div>
+                <div>तेज़ गेम्स</div>
+            </div>
+            <div class="feature">
+                <div>👥</div>
+                <div>दोस्त बनाएं</div>
+            </div>
+            <div class="feature">
+                <div>🏆</div>
+                <div>रिवार्ड जीतें</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2024 Yaar Bin - Sabke liye Games!
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll effect aur click tracking
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Button click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+                
+                // Google Analytics ya tracking ke liye (optional)
+                console.log('User clicked:', this.textContent);
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            document.querySelector('.container').style.opacity = '0';
+            document.querySelector('.container').style.transform = 'translateY(30px)';
+            setTimeout(() => {
+                document.querySelector('.container').style.transition = 'all 0.6s ease';
+                document.querySelector('.container').style.opacity = '1';
+                document.querySelector('.container').style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
